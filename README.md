@@ -24,10 +24,10 @@ adicionar posteriormente os passos para rodar o programa
 
 **DESENVOLVIMENTO DA SOLUÇÃO**
 
-[ ] Desenvolvimento da solução
+- [ ] Desenvolvimento da solução
 
 **FUNÇÕES SUPORTES**
 
-[ ] Leitura do arquivo
-[ ] Temporizar resultados
-[ ] Criação da representação gráfica
+- [ ] Leitura do arquivo
+- [ ] Temporizar resultados
+- [ ] Criação da representação gráfica
