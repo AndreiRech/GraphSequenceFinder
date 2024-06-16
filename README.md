@@ -21,7 +21,7 @@ Também, a utilização de um **editor de código**, como o [VSCode](https://cod
 Dentro do diretório do programa, compile o mesmo utilizando:
 
 ```
-javac Main.java
+javac Main.java Box.java Graph.java Digraph.java DFS.java
 ```
 
 Após isso, execute-o:
@@ -30,15 +30,27 @@ Após isso, execute-o:
 java Main
 ```
 
+Caso arquivos .class sejam gerados, é possível excluí-los usando:
+
+*Windows*
+```
+del *.class
+```
+
+*Linux | Mac*
+```
+rm *.class
+```
+
 # O QUE FAZER
 
 **DESENVOLVIMENTO DA SOLUÇÃO**
 
-- [ ] Verificar se uma caixa cabe dentro de outra
+- [ X ] Verificar se uma caixa cabe dentro de outra
 - [ ] Encontrar o maior caminho entre elas
 
 **FUNÇÕES SUPORTES**
 
 - [ X ] Leitura do arquivo
+- [ X ] Criação da representação gráfica *.dot é printado após achar o caminho*
 - [ ] Temporizar resultados
-- [ ] Criação da representação gráfica
