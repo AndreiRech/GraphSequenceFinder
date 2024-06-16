@@ -5,29 +5,40 @@
 
 # 📚 INTRODUÇÃO
 
-Programa capaz de encontrar a maior sequência possível de objetos colocáveis um dentro de outro dada três dimenções não identificadas. Resumidamente:
+Programa capaz de encontrar a maior sequência possível de objetos colocáveis um dentro de outro dada três dimenções não identificadas.
 > A partir de casos testes, encontrar a **maior sequência** dentro de um grafo
 
-- Caso deseje, é de grande ajuda utilizar o [Simulador de Caixas](https://www.inf.pucrs.br/flash/boxes-html/) para entender melhor como funciona a problemática.
+Caso deseje, é de grande ajuda utilizar o [Simulador de Caixas](https://www.inf.pucrs.br/flash/boxes-html/) para entender melhor como funciona a problemática.
 
 # 🛠 PRÉ REQUISITOS
 
-É necessário possuir a linguagem [Python](https://www.python.org/downloads/) instalada no computador.
+É necessário possuir a linguagem [Java](https://www.java.com/pt-BR/download/) instalada no computador.
+
+Também, a utilização de um **editor de código**, como o [VSCode](https://code.visualstudio.com/) facilita a utilização do programa.
 
 # ⚙ INICIALIZAÇÃO
 
+Dentro do diretório do programa, compile o mesmo utilizando:
+
 ```
-adicionar posteriormente os passos para rodar o programa
+javac Main.java
+```
+
+Após isso, execute-o:
+
+```
+java Main
 ```
 
 # O QUE FAZER
 
 **DESENVOLVIMENTO DA SOLUÇÃO**
 
-- [ ] Desenvolvimento da solução
+- [ ] Verificar se uma caixa cabe dentro de outra
+- [ ] Encontrar o maior caminho entre elas
 
 **FUNÇÕES SUPORTES**
 
-- [ ] Leitura do arquivo
+- [ X ] Leitura do arquivo
 - [ ] Temporizar resultados
 - [ ] Criação da representação gráfica
