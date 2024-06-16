@@ -63,7 +63,6 @@ public class Graph {
   }
 
   public String toDot() {
-    // Usa um conjunto de arestas para evitar duplicatas
     Set<String> edges = new HashSet<>();
     StringBuilder sb = new StringBuilder();
     sb.append("graph {" + NEWLINE);
@@ -82,8 +81,6 @@ public class Graph {
     return sb.toString();
   }
 
-  // Adiciona um vértice adjacente a outro, criando a lista
-  // de adjacências caso ainda não exista no dicionário
   protected List<String> addToList(String v, String w) {
     List<String> list = graph.get(v);
     if (list == null)

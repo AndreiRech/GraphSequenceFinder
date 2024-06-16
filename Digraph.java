@@ -1,5 +1,4 @@
 public class Digraph extends Graph {
-
   public Digraph() {
     super();
   }
