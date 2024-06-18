@@ -46,11 +46,11 @@ rm *.class
 
 **DESENVOLVIMENTO DA SOLUÇÃO**
 
-- [ X ] Verificar se uma caixa cabe dentro de outra
+- [X] Verificar se uma caixa cabe dentro de outra
 - [ ] Encontrar o maior caminho entre elas
 
 **FUNÇÕES SUPORTES**
 
-- [ X ] Leitura do arquivo
-- [ X ] Criação da representação gráfica *.dot é printado após achar o caminho*
-- [ ] Temporizar resultados
+- [X] Leitura do arquivo
+- [X] Criação da representação gráfica *.dot é printado após achar o caminho | opcional*
+- [X] Temporizar resultados
