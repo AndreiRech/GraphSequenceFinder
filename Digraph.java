@@ -3,8 +3,8 @@ public class Digraph extends Graph {
     super();
   }
 
-  public Digraph(String filename) {
-    super(filename);
+  public Digraph(String filename, int size) {
+    super(filename, size);
   }
 
   @Override

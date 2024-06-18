@@ -12,6 +12,7 @@ public class Graph {
   protected Set<String> vertices;
   protected int totalVertices;
   protected int totalEdges;
+  protected Box[] boxes;
 
   public Graph() {
     graph = new HashMap<>();
@@ -19,16 +20,33 @@ public class Graph {
     totalVertices = totalEdges = 0;
   }
 
-  public Graph(String filename) {
+  public Graph(String filename, int size) {
     this();
+    int i=0;
+    boxes = new Box[size];
     In in = new In(filename);
     String line;
     while ((line = in.readLine()) != null) {
-      String[] edge = line.split(" ");
-      addEdge(edge[0], edge[1]);
+      String[] dimensions = line.split(" ");
+      Box box = new Box(Integer.parseInt(dimensions[0]), Integer.parseInt(dimensions[1]), Integer.parseInt(dimensions[2]));  
+      boxes[i] = box;
+      i++;
     }
+    verifyBoxes(boxes, size);
     in.close();
   }
+
+  private void verifyBoxes(Box[] boxes, int size) {
+    for(int i = 0; i < size - 1; i++) {
+        for(int j = i + 1; j < size; j++) {
+            if(boxes[i].fitInto(boxes[j])) {
+                addEdge(String.valueOf(i), String.valueOf(j));
+            } else if(boxes[j].fitInto(boxes[i])) {
+                addEdge(String.valueOf(j), String.valueOf(i));
+            }
+        }
+    }
+}
 
   public void addEdge(String v, String w) {
     addToList(v, w);
