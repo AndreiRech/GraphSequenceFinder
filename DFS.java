@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -8,36 +7,34 @@ import java.util.Set;
 public class DFS {
 	private Set<String> marked;
 	private Map<String, String> edgeTo;
-	private String start;
 	private Map<String, Integer> longestPath;
+	private int longestLenght;
 
-	public DFS(Graph G, String start) {
-		this.start = start;
+	public DFS(Graph G) {
 		marked = new HashSet<String>();
 		edgeTo = new HashMap<String, String>();
 		longestPath = new HashMap<>();
-		dfs(G, start);
+		longestLenght = 0;
+		dfs(G, "0");
 	}
 
 	public boolean hasPathTo(String v) {
 		return marked.contains(v);
 	}
 
-	public int longestPathh() {
-		// implementar a lógica para achar o maior caminho e retornar a quantidade de caixas que cabem uma dentro da outra
-		// não sei como podemos fazer isso :)))))))))))
-		return 0;
+	public int longestLenght() {
+		return longestLenght;
 	}
 
 	Iterable<String> pathTo(String v) {
 		if (!hasPathTo(v)) return null;
 		ArrayList<String> path = new ArrayList<>();
 		String w = v;
-		while(!w.equals(start)) {
+		while(edgeTo.containsKey(w)) {
 			path.add(0,w);
 			w = edgeTo.get(w);
 		}
-		path.add(0,start);
+		path.add(0,w);
 		return path;
 	}
 
