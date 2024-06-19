@@ -7,7 +7,6 @@ import java.util.Set;
 
 public class Graph {
   protected static final String NEWLINE = System.getProperty("line.separator");
-
   protected Map<String, List<String>> graph;
   protected Set<String> vertices;
   protected int totalVertices;
@@ -28,7 +27,7 @@ public class Graph {
     String line;
     while ((line = in.readLine()) != null) {
       String[] dimensions = line.split(" ");
-      Box box = new Box(Integer.parseInt(dimensions[0]), Integer.parseInt(dimensions[1]), Integer.parseInt(dimensions[2]));  
+      Box box = new Box(Integer.parseInt(dimensions[0]), Integer.parseInt(dimensions[1]), Integer.parseInt(dimensions[2]));
       boxes[i] = box;
       i++;
     }
@@ -38,15 +37,15 @@ public class Graph {
 
   private void verifyBoxes(Box[] boxes, int size) {
     for(int i = 0; i < size - 1; i++) {
-        for(int j = i + 1; j < size; j++) {
-            if(boxes[i].fitInto(boxes[j])) {
-                addEdge(String.valueOf(i), String.valueOf(j));
-            } else if(boxes[j].fitInto(boxes[i])) {
-                addEdge(String.valueOf(j), String.valueOf(i));
-            }
+      for(int j = i + 1; j < size; j++) {
+        if(boxes[i].fitInto(boxes[j])) {
+          addEdge(String.valueOf(i), String.valueOf(j));
+        } else if(boxes[j].fitInto(boxes[i])) {
+          addEdge(String.valueOf(j), String.valueOf(i));
         }
+      }
     }
-}
+  }
 
   public void addEdge(String v, String w) {
     addToList(v, w);

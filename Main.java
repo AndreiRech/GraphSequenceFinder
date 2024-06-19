@@ -11,14 +11,14 @@ public class Main {
     private static Map<List<Integer>, String> mapFiles() {
         Map<List<Integer>, String> casos = new HashMap<>();
         casos.put(Arrays.asList(10,4), "Exemplo");
-        //casos.put(Arrays.asList(10,4), "00010");
-        //casos.put(Arrays.asList(20,5), "00020");
-        //casos.put(Arrays.asList(50,8), "00050");
-        //casos.put(Arrays.asList(100,13), "00100");
-        //casos.put(Arrays.asList(200,18), "00200");
-        //casos.put(Arrays.asList(300,19), "00300");
-        //casos.put(Arrays.asList(500,23), "00500");
-        //casos.put(Arrays.asList(1000,28), "01000");
+        casos.put(Arrays.asList(10,4), "00010");
+        casos.put(Arrays.asList(20,5), "00020");
+        casos.put(Arrays.asList(50,8), "00050");
+        casos.put(Arrays.asList(100,13), "00100");
+        casos.put(Arrays.asList(200,18), "00200");
+        casos.put(Arrays.asList(300,19), "00300");
+        casos.put(Arrays.asList(500,23), "00500");
+        casos.put(Arrays.asList(1000,28), "01000");
         //casos.put(Arrays.asList(2000,44), "02000");
         //casos.put(Arrays.asList(5000,61), "05000");
         //casos.put(Arrays.asList(10000,76), "10000");
