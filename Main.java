@@ -19,7 +19,7 @@ public class Main {
         casos.put(Arrays.asList(300,19), "00300");
         casos.put(Arrays.asList(500,23), "00500");
         casos.put(Arrays.asList(1000,28), "01000");
-        //casos.put(Arrays.asList(2000,44), "02000");
+        casos.put(Arrays.asList(2000,44), "02000");
         //casos.put(Arrays.asList(5000,61), "05000");
         //casos.put(Arrays.asList(10000,76), "10000");
 
@@ -28,6 +28,8 @@ public class Main {
         
     private static void maiorCaminho() {
         Map<List<Integer>, String> casos = mapFiles();
+
+        long startFinal = System.nanoTime();
 
         casos.forEach((key, value) -> {
             //access file with WINDOWS
@@ -47,7 +49,15 @@ public class Main {
             System.out.println("\n----- [ CASO " +value +" ] -----");
             System.out.println("-> Valor esperado [ " +key.get(1) +" ]");
             System.out.println("-> Valor encontrado [ " +dfs.longestLenght() +" ]");
+            System.out.println("-> Passos [ " +dfs.steps() +" ]");
             System.out.printf("-> Tempo [ %.3f segundos ]\n", finalTime);
         });
+
+        long finishFinal = System.nanoTime();
+        double finalTimeFinal = (finishFinal - startFinal) / (double) 1000000000;
+
+        System.out.println("\n----- [ Tempo Final ] -----");
+
+        System.out.printf("-> Tempo Final [ %.3f segundos ]\n", finalTimeFinal);
     }
 }

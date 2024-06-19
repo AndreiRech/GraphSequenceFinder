@@ -7,18 +7,23 @@ public class DFS {
 	private Set<String> marked;
 	private Map<String, String> edgeTo;
 	private Map<String, Integer> longestPath;
-	private int longestLenght;
+	private int longestLenght, steps;
 
 	public DFS(Graph G) {
 		marked = new HashSet<String>();
 		edgeTo = new HashMap<String, String>();
 		longestPath = new HashMap<>();
 		longestLenght = 0;
+		steps = 0;
 		findLongestPath(G);
 	}
 
 	public int longestLenght() {
 		return longestLenght;
+	}
+
+	public int steps() {
+		return steps;
 	}
 
 	private void findLongestPath(Graph G) {
@@ -36,6 +41,7 @@ public class DFS {
 		for (String w : g.getAdj(s)) {
 			if (!marked.contains(w)) {
 				edgeTo.put(w, s);
+				steps++;
 				dfs(g, w);
 			}
 			longestPath.put(s, Math.max(longestPath.get(s), 1 + longestPath.get(w)));
