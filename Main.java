@@ -30,7 +30,10 @@ public class Main {
         Map<List<Integer>, String> casos = mapFiles();
 
         casos.forEach((key, value) -> {
-            String filename = "casosT30\\caso" + value + ".txt";
+            //access file with WINDOWS
+            //String filename = "casosT30\\caso" + value + ".txt";
+            //acess file with LINUX
+            String filename = "casosT30//caso" + value + ".txt";
 
             long start = System.nanoTime();
             
