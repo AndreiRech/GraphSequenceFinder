@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -15,36 +14,32 @@ public class DFS {
 		edgeTo = new HashMap<String, String>();
 		longestPath = new HashMap<>();
 		longestLenght = 0;
-		dfs(G, "0");
-	}
-
-	public boolean hasPathTo(String v) {
-		return marked.contains(v);
+		findLongestPath(G);
 	}
 
 	public int longestLenght() {
 		return longestLenght;
 	}
 
-	Iterable<String> pathTo(String v) {
-		if (!hasPathTo(v)) return null;
-		ArrayList<String> path = new ArrayList<>();
-		String w = v;
-		while(edgeTo.containsKey(w)) {
-			path.add(0,w);
-			w = edgeTo.get(w);
-		}
-		path.add(0,w);
-		return path;
+	private void findLongestPath(Graph G) {
+		for (String actualVertex : G.getVerts()) {
+            marked.clear();
+            edgeTo.clear();
+            longestPath.clear();
+            dfs(G, actualVertex);
+        }
 	}
 
 	private void dfs(Graph g, String s) {
 		marked.add(s);
+		longestPath.put(s, 1);
 		for (String w : g.getAdj(s)) {
 			if (!marked.contains(w)) {
 				edgeTo.put(w, s);
 				dfs(g, w);
 			}
-		}	
+			longestPath.put(s, Math.max(longestPath.get(s), 1 + longestPath.get(w)));
+		}
+		longestLenght = Math.max(longestLenght, longestPath.get(s));
 	}
 }
